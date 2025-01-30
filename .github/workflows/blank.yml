@@ -7,4 +7,4 @@ jobs:
     steps:
     
       - name: Use exported variable
-        run: echo "MY_VAR is $CC"
+        run: echo MY_VAR is ${{ CC }}
