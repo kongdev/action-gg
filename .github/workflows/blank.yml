@@ -5,8 +5,6 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Export variable
-        run: echo "MY_VAR=Hello, world!" >> $GITHUB_ENV
-
+    
       - name: Use exported variable
-        run: echo ${CC}
+        run: echo "MY_VAR is $CC"
