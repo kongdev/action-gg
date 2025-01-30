@@ -9,4 +9,4 @@ jobs:
         run: echo "MY_VAR=Hello, world!" >> $GITHUB_ENV
 
       - name: Use exported variable
-        run: echo "MY_VAR is $AA"
+        run: echo "MY_VAR is $CC"
