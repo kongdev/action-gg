@@ -5,12 +5,10 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     env:
-      GLOBAL_ENV: "I am at the job level"
+      MY_VAR_C: ${{ vars.C }}  # Using a repository variable
+      MY_SECRET_A: ${{ secrets.A }}  # Using a secret
     steps:
-      - name: Define environment variable
-        run: echo "STEP_ENV=I am at the step level" >> $GITHUB_ENV
-
-      - name: Print environment variables
+      - name: Print Variables
         run: |
-          echo "GLOBAL_ENV: $GLOBAL_ENV"
-          echo "STEP_ENV: $STEP_ENV"
+          echo "MY_VAR_C: $MY_VAR_C"
+          echo "MY_SECRET_A is hidden"
