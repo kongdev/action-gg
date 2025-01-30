@@ -1,0 +1,16 @@
+name: Example Workflow
+on: push
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    env:
+      GLOBAL_ENV: "I am at the job level"
+    steps:
+      - name: Define environment variable
+        run: echo "STEP_ENV=I am at the step level" >> $GITHUB_ENV
+
+      - name: Print environment variables
+        run: |
+          echo "GLOBAL_ENV: $GLOBAL_ENV"
+          echo "STEP_ENV: $STEP_ENV"
