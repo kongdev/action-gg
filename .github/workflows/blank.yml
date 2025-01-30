@@ -5,8 +5,8 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     env:
-      MY_VAR_C: ${{ vars.c }}  # Using a repository variable
-      MY_SECRET_A: ${{ secrets.a }}  # Using a secret
+      MY_VAR_CC: ${{ vars.CC }}  # Using a repository variable
+      MY_SECRET_AA: ${{ secrets.AA }}  # Using a secret
     steps:
       - name: Print Variables
         run: |
