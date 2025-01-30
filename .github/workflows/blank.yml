@@ -1,10 +1,11 @@
 name: Example Workflow
 on: push
-
 jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-    
-      - name: Use exported variable
-        run: echo MY_VAR is ${{ CC }}
+      - name: Set environment variable
+        run: echo "MY_VAR=hello" >> $GITHUB_ENV
+
+      - name: Use environment variable
+        run: echo "The value is $MY_VAR"
